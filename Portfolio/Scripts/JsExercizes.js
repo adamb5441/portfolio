@@ -1,0 +1,115 @@
+﻿SyntaxHighlighter.all();
+$("#resultHead1").hide();
+$("#resultHead2").hide();
+$("#resultHead3").hide();
+$("#resultHead4").hide();
+$("#smplCode").hide();
+$("#btnNumber").click(() => {
+    var num1 = Number($("#num1").val());
+    var num2 = Number($("#num2").val());
+    var num3 = Number($("#num3").val());
+    var num4 = Number($("#num4").val());
+    var num5 = Number($("#num5").val());
+
+    var sum = num1 + num2 + num3 + num4 + num5;
+    var prod = num1 * num2 * num3 * num4 * num5;
+    var avg = sum / 5;
+    var max = Math.max(num1, num2, num3, num4, num5)
+    var min = Math.min(num1, num2, num3, num4, num5)
+
+    $("#sum").text("The sum of your numbers is: " + sum)
+    $("#product").text("The product of your numbers is: " + prod)
+    $("#average").text("The average of your numbers is: " + avg)
+    $("#max").text("The largest of your numbers is: " + max)
+    $("#min").text("The smallest of your numbers is: " + min)
+    $("#resultHead1").show();
+})
+$("#smplClear").click(() => {
+    $("#num1").val("");
+    $("#num2").val("");
+    $("#num3").val("");
+    $("#num4").val("");
+    $("#num5").val("");
+
+    $("#sum").text("")
+    $("#product").text("")
+    $("#average").text("")
+    $("#max").text("")
+    $("#min").text("")
+    $("#resultHead1").hide();
+})
+$("#showSimple").click(() => {
+    $("#smplCode").toggle()
+})
+$("#factorial").click(() => {
+    var num = Number($("#factIn").val());
+    console.log(num)
+    var total = 1
+    for(let i = 1; i <= num; i++){
+        total *= i;
+    }
+    console.log(total)
+    $("#factOut").text(total)
+    $("#resultHead2").show();
+
+})
+$("#factClear").click(() => {
+    $("#factIn").val("");
+
+    $("#factOut").text("")
+    $("#resultHead2").hide();
+})
+    
+$("#fizzBuzz").click(() => {
+    var num1 = Number($("#fizzIn").val());
+    var num2 = Number($("#buzzIn").val());
+    console.log("the function runs")
+    var arr = [];
+    for (let i = 0; i < 100; i++) {
+        if (num1 % i === 0 && num2 % i === 0) {
+            arr.push("FIZZBUZZ")
+        }
+        else if (num1 % i === 0) {
+            arr.push("FIZZ")
+        }
+        else if (num2 % i === 0) {
+            arr.push("BUZZ")
+        }
+        else {
+            arr.push(i)
+        }
+    }
+    console.log(arr)
+    $("#fbOut").text(arr.toString())
+    $("#resultHead3").show();
+
+})
+$("#fbClear").click(() => {
+    $("#fizzIn").val("");
+    $("#buzzIn").val("");
+
+    $("#fbOut").text("")
+    $("#resultHead3").hide();
+})
+$("#palondrome").click(() => {
+    let str = $("#palIn").val()
+    var arr = str.split('')
+    var j = arr.length - 1
+    var check = true
+    for (let i = 0; i != j && i< j; i++) {
+        if (arr[i] != arr[j]) {
+            check = false
+        }
+        j--
+        console.log("loop")
+    }
+    $("#palOut").text(check.toString())
+    $("#resultHead4").show();
+
+})
+$("#palClear").click(() => {
+    $("#palIn").val("");
+
+    $("#palOut").text("")
+    $("#resultHead4").hide();
+})

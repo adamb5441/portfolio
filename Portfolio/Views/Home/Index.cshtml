@@ -1,0 +1,557 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Freelance - Bootstrap Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicons -->
+    <link href="~/img/favicon.png" rel="icon">
+    <link href="~/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    @*Css for syntaxhighlighter*@
+    <link href="~/Scripts/SyntaxHighlighter/styles/shCore.css" rel="stylesheet" />
+    <link href="~/Scripts/SyntaxHighlighter/styles/shCoreDefault.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic|Raleway:400,300,700" rel="stylesheet">
+
+    <!-- Bootstrap CSS File -->
+    <link href="~/Content/bootstrap.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+    <!-- Main Stylesheet File -->
+    <link href="~/Content/style.css" rel="stylesheet">
+
+    <!-- =======================================================
+      Template Name: Freelance
+      Template URL: https://templatemag.com/freelance-bootstrap-template/
+      Author: TemplateMag.com
+      License: https://templatemag.com/license/
+    ======================================================= -->
+</head>
+
+<body data-spy="scroll" data-offset="0" data-target="#gn-menu">
+    <!-- ========== MAIN MENU ========== -->
+    <div class="container">
+        <ul id="gn-menu" class="gn-menu-main">
+            <li class="gn-trigger">
+                <a class="gn-icon gn-icon-menu"><span>Menu</span></a>
+                <nav class="gn-menu-wrapper">
+                    <div class="gn-scroller">
+                        <ul class="gn-menu">
+                            <li><a href="#home" class="gn-icon gn-icon-home smoothscroll">Home</a></li>
+                            <li><a href="#about" class="gn-icon gn-icon-archive smoothscroll">About</a></li>
+                            <li><a href="#portfolio" class="gn-icon gn-icon-pictures smoothscroll">Portfolio</a></li>
+                            <li><a href="#contact" class="gn-icon gn-icon-envelop smoothscroll">Contact</a></li>
+                        </ul>
+                    </div>
+                    <!-- /gn-scroller -->
+                </nav>
+            </li>
+            <li><a href="#home" class="smoothscroll">Adam Brown</a></li>
+        </ul>
+    </div>
+    <!-- /container -->
+    <!-- ========== HEADER SECTION ========== -->
+    <section id="home" name="home"></section>
+    <div id="headerwrap">
+        <div class="container">
+            <div class="col-lg-8">
+                <h1> Adam the Man the myth the legend.</h1>
+            </div>
+            <div class="col-lg-4">
+            </div>
+        </div>
+        <!-- /container -->
+    </div>
+    <!-- /headerwrap -->
+    <!-- ABOUT SECTION -->
+    <section id="about" name="about"></section>
+    <div class="container about">
+        <div class="col-lg-6 col-lg-offset-3">
+            <h3>About Adam Brown</h3>
+            <h5>WEB DEVELOPER</h5>
+            <hr>
+            <br>
+            <h4>ABOUT ME<br />-</h4>
+            <p>
+                I'm a Web Developer with an interest in hiking and martial arts. I'm always interested in learning how things tick and why they are there at all. Which can be summed up as challenging assumption and doing good work.
+            </p>
+        </div>
+        <!-- /col-lg-6 -->
+    </div>
+    <!-- /container -->
+    <!-- BEGIN CHART SECTION -->
+    <!-- chartwrap -->
+
+    <section id="portfolio" name="portfolio"></section>
+    <div id="foliowrap">
+        <div class="container">
+            <h3>I Create Cool Stuff</h3>
+            <br>
+            <br>
+            <div class="row">
+
+                <!-- PORTFOLIO IMAGE 1 -->
+                <div class="col-md-4 ">
+                    <div class="grid mask">
+                        <figure>
+                            <img class="img-responsive imgStyle" src="~/img/portfolio/js.png" alt="">
+                            <figcaption>
+                                <h5>Javascript Project</h5>
+                                <a data-toggle="modal" href="#myModal" class="btn btn-primary btn-lg">Take a Look</a>
+                            </figcaption>
+                            <!-- /figcaption -->
+                        </figure>
+                        <!-- /figure -->
+                    </div>
+                    <!-- /grid-mask -->
+                    <br>
+                </div>
+                <!-- /col -->
+                <!-- MODAL SHOW THE PORTFOLIO IMAGE. In this demo, all links point to this modal. You should create
+                                      a modal for each of your projects. -->
+
+                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title">Project Title</h4>
+                            </div>
+                            <div class="modal-body">
+                                <ul class="nav nav-pills">
+                                    <li class="active"><a data-toggle="pill" href="#simpl">Simple Math</a></li>
+                                    <li><a data-toggle="pill" href="#fact">Factorial</a></li>
+                                    <li><a data-toggle="pill" href="#fb">FIZZBUZZ</a></li>
+                                    <li><a data-toggle="pill" href="#pal">Palindrome </a></li>
+
+                                </ul>
+
+                                <div class="tab-content">
+                                    <div id="simpl" class="tab-pane fade in active">
+                                        <div class=" container-fluid">
+                                            <div class="col-md-6">
+                                                <div class="row">
+                                                    <h2>Input</h2>
+                                                    <h4>Enter 5 whole numbers</h4>
+                                                </div>
+                                                <div class="row smallpad">
+                                                    Enter number 1: <input id="num1" type="number" />
+                                                </div>
+                                                <div class="row smallpad">
+                                                    Enter number 2: <input id="num2" type="number" />
+                                                </div>
+                                                <div class="row smallpad">
+                                                    Enter number 3: <input id="num3" type="number" />
+                                                </div>
+                                                <div class="row smallpad">
+                                                    Enter number 4: <input id="num4" type="number" />
+                                                </div>
+                                                <div class="row smallpad">
+                                                    Enter number 5: <input id="num5" type="number" />
+                                                </div>
+                                                <div style="padding-top: 10px" class="row">
+                                                    <button id="btnNumber" class="btn btn-success btn-small">run</button>
+                                                    <button id="smplClear" class="btn btn-danger btn-small">clear</button>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="row">
+                                                    <h2><span id="resultHead1">Calculated output</span></h2>
+                                                </div>
+                                                <div class="row">
+                                                    <p id="sum"></p>
+                                                </div>
+                                                <div class="row">
+                                                    <p id="product"></p>
+                                                </div>
+                                                <div class="row">
+                                                    <p id="average"></p>
+                                                </div>
+                                                <div class="row">
+                                                    <p id="max"></p>
+                                                </div>
+                                                <div class="row">
+                                                    <p id="min"></p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="row">
+                                                    <button id="showSimple" class="btn btn-primary">toggle code</button>
+                                                </div>
+                                                <div id="smplCode" class="row">
+                                                    <pre class="brush: js">
+                                                        $("#btnNumber").click(() => {
+                                                            var num1 = Number($("#num1").val());
+                                                            var num2 = Number($("#num2").val());
+                                                            var num3 = Number($("#num3").val());
+                                                            var num4 = Number($("#num4").val());
+                                                            var num5 = Number($("#num5").val());
+
+                                                            var sum = num1 + num2 + num3 + num4 + num5;
+                                                            var prod = num1 * num2 * num3 * num4 * num5;
+                                                            var avg = sum / 5;
+                                                            var max = Math.max(num1, num2, num3, num4, num5)
+                                                            var min = Math.min(num1, num2, num3, num4, num5)
+
+                                                            $("#sum").text("The sum of your numbers is: " + sum)
+                                                            $("#product").text("The product of your numbers is: " + prod)
+                                                            $("#average").text("The average of your numbers is: " + avg)
+                                                            $("#max").text("The largest of your numbers is: " + max)
+                                                            $("#min").text("The smallest of your numbers is: " + min)
+                                                            $("#resultHead1").show();
+                                                        })
+                                                    </pre>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div id="fact" class="tab-pane  fade">
+                                        <div class="container-fluid">
+                                            <div class="col-md-6">
+                                                <div class="row">
+                                                    <h2>Input</h2>
+                                                    <h4>Enter a number between 1 and 170</h4>
+                                                </div>
+                                                <div class="row">
+                                                    Enter number: <input id="factIn" type="number" />
+                                                </div>
+                                                <div style="padding-top: 10px" class="row">
+                                                    <button id="factorial" class="btn btn-success btn-small">run</button>
+                                                    <button id="factClear" class="btn btn-danger btn-small">clear</button>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="row">
+                                                    <h2><span id="resultHead2">Calculated output</span></h2>
+
+                                                </div>
+                                                <div class="row">
+                                                    <p id="factOut"></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="fb" class="tab-pane fade">
+                                        <div class="container-fluid">
+                                            <div class=" col-md-6">
+                                                <div class="row">
+                                                    <h2>Input</h2>
+                                                    <h4>Enter 2 numbers between 1 and 100</h4>
+                                                </div>
+                                                <div class="row">
+                                                    Enter number 1: <input id="fizzIn" />
+                                                </div>
+                                                <div class="row">
+                                                    Enter number 2: <input id="buzzIn" />
+                                                </div>
+                                                <div style="padding-top: 10px" class="row">
+                                                    <button id="fizzBuzz" class="btn btn-success btn-small">run</button>
+                                                    <button id="fbClear" class="btn btn-danger btn-small">clear</button>
+                                                </div>
+                                            </div>
+                                            <div class=" col-md-6">
+                                                <div class="row">
+                                                    <h2><span id="resultHead3">Calculated output</span></h2>
+                                                </div>
+                                                <div class="row">
+                                                    <p style="word-wrap: break-word;" id="fbOut"></p>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div id="pal" class="tab-pane fade">
+                                        <div class="container-fluid">
+                                            <div class=" col-md-6">
+                                                <div class="row">
+                                                    <h2>Input</h2>
+                                                    <h4>Enter a word</h4>
+                                                </div>
+                                                <div class="row">
+                                                    <input id="palIn" />
+                                                </div>
+                                                <div class="row" style="padding-top: 10px">
+                                                    <button id="palondrome" class="btn btn-small btn-success">run</button>
+                                                    <button id="palClear" class="btn btn-small btn-danger">clear</button>
+
+                                                </div>
+                                            </div>
+                                            <div class=" col-md-6">
+                                                <div class="row">
+                                                    <h2><span id="resultHead4">Calculated output</span></h2>
+                                                </div>
+                                                <div class="row">
+                                                    <p id="palOut"></p>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                        <!-- /.modal-content -->
+                    </div>
+                    <!-- /.modal-dialog -->
+                </div>
+                <!-- /.modal -->
+                <!-- PORTFOLIO IMAGE 2 -->
+                <div class="col-md-4">
+                    <div class="grid mask">
+                        <figure>
+                            <img class="img-responsive" src="~/img/portfolio/folio02.jpg" alt="">
+                            <figcaption>
+                                <h5>UI DESIGN</h5>
+                                <a data-toggle="modal" href="#myModal" class="btn btn-primary btn-lg">Take a Look</a>
+                            </figcaption>
+                            <!-- /figcaption -->
+                        </figure>
+                        <!-- /figure -->
+                    </div>
+                    <!-- /grid-mask -->
+                    <br>
+                </div>
+                <!-- /col -->
+                <!-- PORTFOLIO IMAGE 3 -->
+                <div class="col-md-4">
+                    <div class="grid mask">
+                        <figure>
+                            <img class="img-responsive" src="~/img/portfolio/folio03.jpg" alt="">
+                            <figcaption>
+                                <h5>ANDROID PAGE</h5>
+                                <a data-toggle="modal" href="#myModal" class="btn btn-primary btn-lg">Take a Look</a>
+                            </figcaption>
+                            <!-- /figcaption -->
+                        </figure>
+                        <!-- /figure -->
+                    </div>
+                    <!-- /grid-mask -->
+                    <br>
+                </div>
+                <!-- /col -->
+            </div>
+            <!-- /row -->
+            <!-- PORTFOLIO IMAGE 4 -->
+            <div class="row">
+                <div class="col-md-4 ">
+                    <div class="grid mask">
+                        <figure>
+                            <img class="img-responsive" src="~/img/portfolio/folio04.jpg" alt="">
+                            <figcaption>
+                                <h5>PROFILE</h5>
+                                <a data-toggle="modal" href="#myModal" class="btn btn-primary btn-lg">Take a Look</a>
+                            </figcaption>
+                            <!-- /figcaption -->
+                        </figure>
+                        <!-- /figure -->
+                    </div>
+                    <!-- /grid-mask -->
+                    <br>
+                </div>
+                <!-- /col -->
+                <!-- PORTFOLIO IMAGE 5 -->
+                <div class="col-md-4">
+                    <div class="grid mask">
+                        <figure>
+                            <img class="img-responsive" src="~/img/portfolio/folio05.jpg" alt="">
+                            <figcaption>
+                                <h5>TWITTER STATUS</h5>
+                                <a data-toggle="modal" href="#myModal" class="btn btn-primary btn-lg">Take a Look</a>
+                            </figcaption>
+                            <!-- /figcaption -->
+                        </figure>
+                        <!-- /figure -->
+                    </div>
+                    <!-- /grid-mask -->
+                    <br>
+                </div>
+                <!-- /col -->
+                <!-- PORTFOLIO IMAGE 6 -->
+                <div class="col-md-4">
+                    <div class="grid mask">
+                        <figure>
+                            <img class="img-responsive" src="~/img/portfolio/folio06.jpg" alt="">
+                            <figcaption>
+                                <h5>PHONE MOCKUP</h5>
+                                <a data-toggle="modal" href="#myModal" class="btn btn-primary btn-lg">Take a Look</a>
+                            </figcaption>
+                            <!-- /figcaption -->
+                        </figure>
+                        <!-- /figure -->
+                    </div>
+                    <!-- /grid-mask -->
+                </div>
+                <!-- /col -->
+                <br>
+            </div>
+            <!-- /row -->
+        </div>
+        <!-- /container -->
+    </div>
+    <!-- /foliowrap -->
+    <!-- /container -->
+
+    <div id="testimonial" style="padding: 80px">
+        <div class="container">
+            <h1>Skills</h1>
+            <br>
+            <br>
+            <div class="bs-example">
+                <div id="carousel-example-generic" class="carousel slide bs-docs-carousel-example">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <<div class="container">
+                                <div class="row">
+                                    <div class="col-md-4 item">
+                                        <img src="~/img/react.png" />
+                                        <h2 >React</h2>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <img src="~/img/redux2.png" />
+                                        <h2>Redux</h2>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <img src="~/img/postgres2.png" />
+                                        <h2>Postgres</h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <h1>I'm really happy with the results. Get 100% satisfaction is difficult but Alex got it without problems.</h1>
+                            <br>
+                            <h2>Joan Mathews</h2>
+                        </div>
+                        <div class="item">
+                            <h1>Search no more. Alex is the guy that you need for your next project. Don't waste your time. He's the chosen one.</h1>
+                            <br>
+                            <h2>Trevor Bishop</h2>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section id="contact" name="contact"></section>
+    <div id="footerwrap">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-12">
+                    <h3>CONTACT ME</h3>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <p>
+                    Feel free to get in touch I hope to speak with you soon!
+                </p>
+            </div>
+
+            <div class="col-lg-7">
+                <br>
+
+                <form class="contact-form php-mail-form" role="form" action="contactform/contactform.php" method="POST">
+
+                    <div class="form-group">
+                        <label for="contact-name">Your Name</label>
+                        <input type="name" name="name" class="form-control" id="contact-name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+                        <div class="validate"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-email">Your Email</label>
+                        <input type="email" name="email" class="form-control" id="contact-email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email">
+                        <div class="validate"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-subject">Subject</label>
+                        <input type="text" name="subject" class="form-control" id="contact-subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject">
+                        <div class="validate"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contact-message">Your Message</label>
+                        <textarea class="form-control" name="message" id="contact-message" placeholder="Your Message" rows="5" data-rule="required" data-msg="Please write something for us"></textarea>
+                        <div class="validate"></div>
+                    </div>
+
+                    <div class="loading"></div>
+                    <div class="error-message"></div>
+                    <div class="sent-message">Your message has been sent. Thank you!</div>
+
+                    <div class="form-send">
+                        <button type="submit" class="btn btn-large">Send Message</button>
+                    </div>
+
+                </form>
+            </div>
+
+        </div>
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-md-12">
+                    <a href="https://github.com/adamb5441" target="_blank"><i class="fab fa-github socialLinks"></i></a>
+                    <a href="https://www.linkedin.com/in/adamb54/" target="_blank"><i class="fab fa-linkedin-in socialLinks"></i></a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="copyrights">
+        <div class="container">
+            <p>
+                &copy; Copyrights <strong>Freelance</strong>. All Rights Reserved
+            </p>
+            <div class="credits">
+                <!--
+                  You are NOT allowed to delete the credit link to TemplateMag with free version.
+                  You can delete the credit link only if you bought the pro version.
+                  Buy the pro version with working PHP/AJAX contact form: https://templatemag.com/freelance-bootstrap-template/
+                  Licensing information: https://templatemag.com/license/
+                -->
+                Created with Freelance template by <a href="https://templatemag.com/">TemplateMag</a>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/SyntaxHighlighter/scripts/shCore.js"></script>
+    <script src="~/Scripts/SyntaxHighlighter/scripts/shBrushJScript.js"></script>
+    <script src="~/lib/easing/easing.min.js"></script>
+    <script src="~/Scripts/JsExercizes.js"></script>
+    <script src="~/lib/chart/chart.js"></script>
+    <script src="~/lib/classie/classie.js"></script>
+    <script src="~/lib/gnmenu/gnmenu.js"></script>
+    <!-- Template Main Javascript File -->
+    <script src="~/Scripts/main.js"></script>
+
+</body>
+</html>
