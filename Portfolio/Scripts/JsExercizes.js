@@ -10,19 +10,35 @@ $("#btnNumber").click(() => {
     var num3 = Number($("#num3").val());
     var num4 = Number($("#num4").val());
     var num5 = Number($("#num5").val());
-    var sum = num1 + num2 + num3 + num4 + num5;
-    var prod = num1 * num2 * num3 * num4 * num5;
-    var avg = sum / 5;
-    var max = Math.max(num1, num2, num3, num4, num5)
-    var min = Math.min(num1, num2, num3, num4, num5)
 
-    $("#sum").text("The sum of your numbers is: " + sum)
-    $("#product").text("The product of your numbers is: " + prod)
-    $("#average").text("The average of your numbers is: " + avg)
-    $("#max").text("The largest of your numbers is: " + max)
-    $("#min").text("The smallest of your numbers is: " + min)
+    if (checkSmpl(num1) || checkSmpl(num2) || checkSmpl(num2) || checkSmpl(num4) || checkSmpl(num5)) {
+        $("#sum").text("Invalid entry")
+    }
+    else {
+        var sum = num1 + num2 + num3 + num4 + num5;
+        var prod = num1 * num2 * num3 * num4 * num5;
+        var avg = sum / 5;
+        var max = Math.max(num1, num2, num3, num4, num5)
+        var min = Math.min(num1, num2, num3, num4, num5)
+
+        $("#sum").text("The sum of your numbers is: " + sum)
+        $("#product").text("The product of your numbers is: " + prod)
+        $("#average").text("The average of your numbers is: " + avg)
+        $("#max").text("The largest of your numbers is: " + max)
+        $("#min").text("The smallest of your numbers is: " + min)
+    }
+
     $("#resultHead1").show();
 })
+const checkSmpl = (val) => {
+    console.log(val)
+    if (isNaN(val) || val == 0) {
+        return true
+    }
+    else {
+        return false
+    }
+}
 $("#num1, #num2, #num3, #num4, #num5").on("keypress", function (e) {
     if (e.which < 48 || e.which > 57) {
         e.preventDefault()
@@ -97,10 +113,10 @@ $("#fizzBuzz").click(() => {
                 arr.push('<span class="fizzbuzz">FIZZBUZZ</span>')
             }
             else if (i % num1 === 0) {
-                arr.push("FIZZ")
+                arr.push('<span class="fizz">FIZZ</span>')
             }
             else if (i % num2 === 0) {
-                arr.push("BUZZ")
+                arr.push('<span class="buzz">BUZZ</span>')
             }
             else {
                 arr.push(i)
