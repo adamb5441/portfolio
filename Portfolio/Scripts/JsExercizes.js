@@ -10,7 +10,6 @@ $("#btnNumber").click(() => {
     var num3 = Number($("#num3").val());
     var num4 = Number($("#num4").val());
     var num5 = Number($("#num5").val());
-
     var sum = num1 + num2 + num3 + num4 + num5;
     var prod = num1 * num2 * num3 * num4 * num5;
     var avg = sum / 5;
@@ -23,6 +22,11 @@ $("#btnNumber").click(() => {
     $("#max").text("The largest of your numbers is: " + max)
     $("#min").text("The smallest of your numbers is: " + min)
     $("#resultHead1").show();
+})
+$("#num1, #num2, #num3, #num4, #num5").on("keypress", function (e) {
+    if (e.which < 48 || e.which > 57) {
+        e.preventDefault()
+    }
 })
 $("#smplClear").click(() => {
     $("#num1").val("");
@@ -41,12 +45,25 @@ $("#smplClear").click(() => {
 $("#showSimple").click(() => {
     $("#smplCode").toggle()
 })
+$("#factIn").on("keypress", function(e) {
+    if (e.which < 48 || e.which > 57) {
+        e.preventDefault()
+    }
+    else if ($(this).val().length > 2) {
+        e.preventDefault()
+    }
+})
 $("#factorial").click(() => {
     var num = Number($("#factIn").val());
     console.log(num)
     var total = 1
-    for(let i = 1; i <= num; i++){
-        total *= i;
+    if (num <1 || num > 170) {
+        total = "invalid entry";
+    }
+    else {
+        for (let i = 2; i <= num; i++) {
+            total *= i;
+        }
     }
     console.log(total)
     $("#factOut").text(total)
@@ -59,29 +76,49 @@ $("#factClear").click(() => {
     $("#factOut").text("")
     $("#resultHead2").hide();
 })
-    
+
+const checkFB = (val) => {
+    if (val > 100 || val === 0) {
+        return true
+    } else {
+        return false
+    }
+}
 $("#fizzBuzz").click(() => {
     var num1 = Number($("#fizzIn").val());
     var num2 = Number($("#buzzIn").val());
-    console.log("the function runs")
     var arr = [];
-    for (let i = 0; i < 100; i++) {
-        if (num1 % i === 0 && num2 % i === 0) {
-            arr.push("FIZZBUZZ")
-        }
-        else if (num1 % i === 0) {
-            arr.push("FIZZ")
-        }
-        else if (num2 % i === 0) {
-            arr.push("BUZZ")
-        }
-        else {
-            arr.push(i)
+    if (checkFB(num1) || checkFB(num2)) {
+        arr = "invalid entry"
+    }
+    else {
+        for (let i = 1; i < 100; i++) {
+            if (i % num1 === 0 && i % num2 === 0) {
+                arr.push('<span class="fizzbuzz">FIZZBUZZ</span>')
+            }
+            else if (i % num1 === 0) {
+                arr.push("FIZZ")
+            }
+            else if (i % num2 === 0) {
+                arr.push("BUZZ")
+            }
+            else {
+                arr.push(i)
+            }
         }
     }
-    console.log(arr)
-    $("#fbOut").text(arr.toString())
+    $("#fbOut").html(arr.toString())
     $("#resultHead3").show();
+
+})
+$("#fizzIn,#buzzIn").on("keypress", function (e) {
+    console.log($(this).val())
+    if (e.which < 48 || e.which > 57) {
+        e.preventDefault()
+    }
+    else if ($(this).val().length > 2) {
+        e.preventDefault()
+    }
 
 })
 $("#fbClear").click(() => {

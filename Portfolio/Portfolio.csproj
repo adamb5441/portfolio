@@ -149,7 +149,9 @@
     <Content Include="img\foliowrap.jpg" />
     <Content Include="img\header-bg.jpg" />
     <Content Include="img\hiking.jpg" />
+    <Content Include="img\jquery.png" />
     <Content Include="img\mint.jpg" />
+    <Content Include="img\node.png" />
     <Content Include="img\portfolio\folio01.jpg" />
     <Content Include="img\portfolio\folio02.jpg" />
     <Content Include="img\portfolio\folio03.jpg" />
@@ -158,8 +160,10 @@
     <Content Include="img\portfolio\folio06.jpg" />
     <Content Include="img\portfolio\js.png" />
     <Content Include="img\postgres2.png" />
+    <Content Include="img\postman.png" />
     <Content Include="img\react.png" />
     <Content Include="img\redux2.png" />
+    <Content Include="img\smlNode.png" />
     <Content Include="Scripts\JsExercizes.js" />
     <Content Include="Scripts\main.js" />
     <Content Include="lib\chart\chart.js" />
