@@ -4,6 +4,10 @@ $("#resultHead2").hide();
 $("#resultHead3").hide();
 $("#resultHead4").hide();
 $("#smplCode").hide();
+$("#factCode").hide();
+$("#fbCode").hide();
+$("#palCode").hide();
+
 $("#btnNumber").click(() => {
     var num1 = Number($("#num1").val());
     var num2 = Number($("#num2").val());
@@ -91,6 +95,10 @@ $("#factClear").click(() => {
 
     $("#factOut").text("")
     $("#resultHead2").hide();
+
+})
+$("#showFact").click(() => {
+    $("#factCode").toggle()
 })
 
 const checkFB = (val) => {
@@ -106,6 +114,7 @@ $("#fizzBuzz").click(() => {
     var arr = [];
     if (checkFB(num1) || checkFB(num2)) {
         arr = "invalid entry"
+        $("#fbOut").html(arr)
     }
     else {
         for (let i = 1; i < 100; i++) {
@@ -122,8 +131,8 @@ $("#fizzBuzz").click(() => {
                 arr.push(i)
             }
         }
+        $("#fbOut").html(arr.join(", "));
     }
-    $("#fbOut").html(arr.toString())
     $("#resultHead3").show();
 
 })
@@ -137,6 +146,10 @@ $("#fizzIn,#buzzIn").on("keypress", function (e) {
     }
 
 })
+$("#showfb").click(() => {
+    $("#fbCode").toggle()
+})
+
 $("#fbClear").click(() => {
     $("#fizzIn").val("");
     $("#buzzIn").val("");
@@ -159,6 +172,16 @@ $("#palondrome").click(() => {
     $("#palOut").text(check.toString())
     $("#resultHead4").show();
 
+})
+$("#palIn").on("keypress", function (e) {
+    console.log($(this).val())
+    if (e.which > 48 && e.which < 57 || e.which == 32) {
+        e.preventDefault()
+    }
+
+})
+$("#showpal").click(() => {
+    $("#palCode").toggle()
 })
 $("#palClear").click(() => {
     $("#palIn").val("");

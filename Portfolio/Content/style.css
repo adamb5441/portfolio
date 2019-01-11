@@ -12,6 +12,9 @@
 .smallpad{
     padding: 5px
 }
+.smallmar {
+    margin: 5px
+}
 .imgStyle{
     height: 240px
 }
@@ -26,7 +29,7 @@
     color: green
 }
 .fizzbuzz{
-    color: yellow
+    color: purple
  }
 .inv{
     color: red
@@ -269,14 +272,14 @@ hr {
   letter-spacing: 2px
 }
 
-.grid figcaption a {
-  text-align: left;
-  padding: 5px 10px;
-  margin-left: 20px;
-  display: inline-block;
-  background: #2f2f2f;
-  color: #fff;
-  font-size: 13px
+.sideButton {
+    text-align: left;
+    padding: 5px 10px;
+    margin-left: 20px;
+    display: inline-block;
+    background: #2f2f2f;
+    color: #fff;
+    font-size: 13px
 }
 
 .mask figure {
@@ -322,11 +325,11 @@ hr {
   transition: transform .4s, opacity .1s
 }
 
-.mask figcaption a {
-  position: absolute;
-  top: 10px;
-  bottom: 10px;
-  right: 30px
+.sideButton {
+    position: absolute;
+    top: 10px;
+    bottom: 10px;
+    right: 30px
 }
 
 .accordion-heading {

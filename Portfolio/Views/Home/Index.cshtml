@@ -111,7 +111,7 @@
                             <img class="img-responsive imgStyle" src="~/img/portfolio/js.png" alt="">
                             <figcaption>
                                 <h5>Javascript Project</h5>
-                                <a data-toggle="modal" href="#myModal" class="btn btn-primary btn-lg">Take a Look</a>
+                                <a data-toggle="modal" href="#myModal" class="btn btn-primary btn-lg sideButton">Take a Look</a>
                             </figcaption>
                             <!-- /figcaption -->
                         </figure>
@@ -201,18 +201,55 @@
                                                             var num4 = Number($("#num4").val());
                                                             var num5 = Number($("#num5").val());
 
-                                                            var sum = num1 + num2 + num3 + num4 + num5;
-                                                            var prod = num1 * num2 * num3 * num4 * num5;
-                                                            var avg = sum / 5;
-                                                            var max = Math.max(num1, num2, num3, num4, num5)
-                                                            var min = Math.min(num1, num2, num3, num4, num5)
+                                                            if (checkSmpl(num1) || checkSmpl(num2) || checkSmpl(num2) || checkSmpl(num4) || checkSmpl(num5)) {
+                                                                $("#sum").text("Invalid entry")
+                                                            }
+                                                            else {
+                                                                var sum = num1 + num2 + num3 + num4 + num5;
+                                                                var prod = num1 * num2 * num3 * num4 * num5;
+                                                                var avg = sum / 5;
+                                                                var max = Math.max(num1, num2, num3, num4, num5)
+                                                                var min = Math.min(num1, num2, num3, num4, num5)
 
-                                                            $("#sum").text("The sum of your numbers is: " + sum)
-                                                            $("#product").text("The product of your numbers is: " + prod)
-                                                            $("#average").text("The average of your numbers is: " + avg)
-                                                            $("#max").text("The largest of your numbers is: " + max)
-                                                            $("#min").text("The smallest of your numbers is: " + min)
+                                                                $("#sum").text("The sum of your numbers is: " + sum)
+                                                                $("#product").text("The product of your numbers is: " + prod)
+                                                                $("#average").text("The average of your numbers is: " + avg)
+                                                                $("#max").text("The largest of your numbers is: " + max)
+                                                                $("#min").text("The smallest of your numbers is: " + min)
+                                                            }
+
                                                             $("#resultHead1").show();
+                                                        })
+                                                        const checkSmpl = (val) => {
+                                                            console.log(val)
+                                                            if (isNaN(val) || val == 0) {
+                                                                return true
+                                                            }
+                                                            else {
+                                                                return false
+                                                            }
+                                                        }
+                                                        $("#num1, #num2, #num3, #num4, #num5").on("keypress", function (e) {
+                                                            if (e.which < 48 || e.which > 57) {
+                                                                e.preventDefault()
+                                                            }
+                                                        })
+                                                        $("#smplClear").click(() => {
+                                                            $("#num1").val("");
+                                                            $("#num2").val("");
+                                                            $("#num3").val("");
+                                                            $("#num4").val("");
+                                                            $("#num5").val("");
+
+                                                            $("#sum").text("")
+                                                            $("#product").text("")
+                                                            $("#average").text("")
+                                                            $("#max").text("")
+                                                            $("#min").text("")
+                                                            $("#resultHead1").hide();
+                                                        })
+                                                        $("#showSimple").click(() => {
+                                                            $("#smplCode").toggle()
                                                         })
                                                     </pre>
                                                 </div>
@@ -244,6 +281,50 @@
                                                     <p id="factOut"></p>
                                                 </div>
                                             </div>
+                                            <div class="col-md-12">
+                                                <div class="row">
+                                                    <button id="showFact" class="btn btn-primary">toggle code</button>
+                                                </div>
+                                                <div id="factCode" class="row">
+                                                    <pre class="brush: js">
+                                                        $("#factIn").on("keypress", function(e) {
+                                                            if (e.which < 48 || e.which > 57) {
+                                                                e.preventDefault()
+                                                            }
+                                                            else if ($(this).val().length > 2) {
+                                                                e.preventDefault()
+                                                            }
+                                                        })
+                                                        $("#factorial").click(() => {
+                                                            var num = Number($("#factIn").val());
+                                                            console.log(num)
+                                                            var total = 1
+                                                            if (num <1 || num> 170) {
+                                                                total = "invalid entry";
+                                                            }
+                                                            else {
+                                                                for (let i = 2; i <= num; i++) {
+                                                                    total *= i;
+                                                                }
+                                                            }
+                                                            console.log(total)
+                                                            $("#factOut").text(total)
+                                                            $("#resultHead2").show();
+
+                                                        })
+                                                        $("#factClear").click(() => {
+                                                            $("#factIn").val("");
+
+                                                            $("#factOut").text("")
+                                                            $("#resultHead2").hide();
+
+                                                        })
+                                                        $("#showFact").click(() => {
+                                                            $("#factCode").toggle()
+                                                        })
+                                                    </pre>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                     <div id="fb" class="tab-pane fade">
@@ -269,7 +350,72 @@
                                                     <h2><span id="resultHead3">Calculated output</span></h2>
                                                 </div>
                                                 <div class="row">
-                                                    <p style="word-wrap: break-word;" id="fbOut"></p>
+                                                    <p id="fbOut"></p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="row">
+                                                    <button id="showfb" class="btn btn-primary">toggle code</button>
+                                                </div>
+                                                <div id="fbCode" class="row">
+                                                    <pre class="brush: js">
+                                                        const checkFB = (val) => {
+                                                                if (val > 100 || val === 0) {
+                                                                    return true
+                                                                } else {
+                                                                    return false
+                                                                }
+                                                            }
+                                                            $("#fizzBuzz").click(() => {
+                                                                var num1 = Number($("#fizzIn").val());
+                                                                var num2 = Number($("#buzzIn").val());
+                                                                var arr = [];
+                                                                if (checkFB(num1) || checkFB(num2)) {
+                                                                    arr = "invalid entry"
+                                                                    $("#fbOut").html(arr)
+                                                                }
+                                                                else {
+                                                                    for (let i = 1; i < 100; i++) {
+                                                                        if (i % num1 === 0 && i % num2 === 0) {
+                                                                            arr.push('<span class="fizzbuzz">FIZZBUZZ</span>')
+                                                                        }
+                                                                        else if (i % num1 === 0) {
+                                                                            arr.push('<span class="fizz">FIZZ</span>')
+                                                                        }
+                                                                        else if (i % num2 === 0) {
+                                                                            arr.push('<span class="buzz">BUZZ</span>')
+                                                                        }
+                                                                        else {
+                                                                            arr.push(i)
+                                                                        }
+                                                                    }
+                                                                    $("#fbOut").html(arr.join(", "));
+                                                                }
+                                                                $("#resultHead3").show();
+
+                                                            })
+                                                            $("#fizzIn,#buzzIn").on("keypress", function (e) {
+                                                                console.log($(this).val())
+                                                                if (e.which < 48 || e.which > 57) {
+                                                                    e.preventDefault()
+                                                                }
+                                                                else if ($(this).val().length > 2) {
+                                                                    e.preventDefault()
+                                                                }
+
+                                                            })
+                                                            $("#showfb").click(() => {
+                                                                $("#fbCode").toggle()
+                                                            })
+
+                                                            $("#fbClear").click(() => {
+                                                                $("#fizzIn").val("");
+                                                                $("#buzzIn").val("");
+
+                                                                $("#fbOut").text("")
+                                                                $("#resultHead3").hide();
+                                                            })
+                                                    </pre>
                                                 </div>
                                             </div>
 
@@ -299,6 +445,47 @@
                                                     <p id="palOut"></p>
                                                 </div>
                                             </div>
+                                            <div class="col-md-12">
+                                                <div class="row">
+                                                    <button id="showpal" class="btn btn-primary">toggle code</button>
+                                                </div>
+                                                <div id="palCode" class="row">
+                                                    <pre class="brush: js">
+                                                        $("#palondrome").click(() => {
+                                                            let str = $("#palIn").val()
+                                                            var arr = str.split('')
+                                                            var j = arr.length - 1
+                                                            var check = true
+                                                            for (let i = 0; i != j && i< j; i++) {
+                                                                if (arr[i] != arr[j]) {
+                                                                    check = false
+                                                                }
+                                                                j--
+                                                                console.log("loop")
+                                                            }
+                                                            $("#palOut").text(check.toString())
+                                                            $("#resultHead4").show();
+
+                                                        })
+                                                        $("#palIn").on("keypress", function (e) {
+                                                            console.log($(this).val())
+                                                            if (e.which > 48 && e.which < 57 || e.which == 32) {
+                                                                e.preventDefault()
+                                                            }
+
+                                                        })
+                                                        $("#showfb").click(() => {
+                                                            $("#palCode").toggle()
+                                                        })
+                                                        $("#palClear").click(() => {
+                                                            $("#palIn").val("");
+
+                                                            $("#palOut").text("")
+                                                            $("#resultHead4").hide();
+                                                        })
+                                                    </pre>
+                                                </div>
+                                            </div>
 
                                         </div>
                                     </div>
@@ -317,12 +504,12 @@
                 <div class="col-md-4">
                     <div class="grid mask">
                         <figure>
-                            <img class="img-responsive" src="~/img/portfolio/folio02.jpg" alt="">
-                            <figcaption>
-                                <h5>UI DESIGN</h5>
-                                <a data-toggle="modal" href="#myModal" class="btn btn-primary btn-lg">Take a Look</a>
-                                <a data-toggle="modal" href="#myModal" class="btn btn-primary btn-lg">Take a Look</a>
-                                <a data-toggle="modal" href="#myModal" class="btn btn-primary btn-lg">Take a Look</a>
+                            <img class="img-responsive" src="~/img/portimg1.png" />
+                            <figcaption style="height: auto; display:flex; flex-direction: column; justify-content: center; align-items: center; text-align: center" ;>
+                                <h3 class="smallmar">Trip-Planner</h3>
+                                <button class="btn btn-primary btn-lg smallmar">Learn More</button>
+                                <a href="https://tipplaner.devmtn-projects.com/#/" target="_blank" class="btn btn-primary btn-lg smallmar">Live Site</a>
+                                <a href="https://github.com/adamb5441/Personal_project" target="_blank" class="btn btn-primary btn-lg smallmar">Repository</a>
 
                             </figcaption>
                             <!-- /figcaption -->
@@ -337,10 +524,12 @@
                 <div class="col-md-4">
                     <div class="grid mask">
                         <figure>
-                            <img class="img-responsive" src="~/img/portfolio/folio03.jpg" alt="">
-                            <figcaption>
-                                <h5>ANDROID PAGE</h5>
-                                <a data-toggle="modal" href="#myModal" class="btn btn-primary btn-lg">Take a Look</a>
+                            <img class="img-responsive" src="~/img/portimg2.png" />
+                            <figcaption style="height: auto; display:flex; flex-direction: column; justify-content: center; align-items: center" ;>
+                                <h3>DigiDash</h3>
+                                <button class="btn btn-primary btn-lg smallmar">Learn More</button>
+                                <a href="https://digi-dash.co/" target="_blank" class="btn btn-primary btn-lg smallmar">Live Site</a>
+                                <a href="https://github.com/adamb5441/digidash" target="_blank"><button class="btn btn-primary btn-lg smallmar">Repository</button></a>
                             </figcaption>
                             <!-- /figcaption -->
                         </figure>
@@ -357,10 +546,13 @@
                 <div class="col-md-4 ">
                     <div class="grid mask">
                         <figure>
-                            <img class="img-responsive" src="~/img/portfolio/folio04.jpg" alt="">
-                            <figcaption>
-                                <h5>PROFILE</h5>
-                                <a data-toggle="modal" href="#myModal" class="btn btn-primary btn-lg">Take a Look</a>
+                            <img class="img-responsive" src="~/img/portimg3.png" />
+                            <figcaption style="height: auto; display:flex; flex-direction: column; justify-content: center; align-items: center" ;>
+                                <h3>Keyboard Warrior</h3>
+                                <button class="btn btn-primary btn-lg smallmar">Learn More</button>
+                                <a href="https://thekeyboardwarrior.net/#/" target="_blank" class="btn btn-primary btn-lg smallmar">Live Site</a>
+                                <a href="https://github.com/adamb5441/ecommerce" target="_blank"><button class="btn btn-primary btn-lg smallmar">Repository</button></a>
+
                             </figcaption>
                             <!-- /figcaption -->
                         </figure>
@@ -374,10 +566,13 @@
                 <div class="col-md-4">
                     <div class="grid mask">
                         <figure>
-                            <img class="img-responsive" src="~/img/portfolio/folio05.jpg" alt="">
-                            <figcaption>
-                                <h5>TWITTER STATUS</h5>
-                                <a data-toggle="modal" href="#myModal" class="btn btn-primary btn-lg">Take a Look</a>
+                            <img class="img-responsive" src="~/img/blogs.jpg" />
+                            <figcaption style="height: auto; display:flex; flex-direction: column; justify-content: center; align-items: center" ;>
+                                <h3>Blog</h3>
+                                @*<button class="btn btn-primary btn-lg smallmar">Learn More</button>
+                                <button class="btn btn-primary btn-lg smallmar">Live Site</button>
+                                <a href="https://github.com/adamb5441" target="_blank"><button class="btn btn-primary btn-lg smallmar">Repository</button></a>*@
+                                 <p>Under Construction</p>
                             </figcaption>
                             <!-- /figcaption -->
                         </figure>
@@ -391,10 +586,13 @@
                 <div class="col-md-4">
                     <div class="grid mask">
                         <figure>
-                            <img class="img-responsive" src="~/img/portfolio/folio06.jpg" alt="">
-                            <figcaption>
-                                <h5>PHONE MOCKUP</h5>
-                                <a data-toggle="modal" href="#myModal" class="btn btn-primary btn-lg">Take a Look</a>
+                            <img class="img-responsive" src="~/img/bugTracker.jpg" />
+                            <figcaption style="height: auto; display:flex; flex-direction: column; justify-content: center; align-items: center" ;>
+                                <h3>Bug-Tracker</h3>
+                                @*<button class="btn btn-primary btn-lg smallmar">Learn More</button>
+                                <button class="btn btn-primary btn-lg smallmar">Live Site</button>
+                                <a href="https://github.com/adamb5441" target="_blank"><button class="btn btn-primary btn-lg smallmar">Repository</button></a>*@
+                                <p>Under Construction</p>
                             </figcaption>
                             <!-- /figcaption -->
                         </figure>
@@ -404,6 +602,65 @@
                 </div>
                 <!-- /col -->
                 <br>
+            </div>
+            <div class="row">
+                <div class="col-md-4 ">
+                    <div class="grid mask">
+                        <figure>
+                            <img class="img-responsive"  src="~/img/financial.jpg" />
+                            <figcaption style="height: auto; display:flex; flex-direction: column; justify-content: center; align-items: center" ;>
+                                <h3>MCP</h3>
+                                @*<button class="btn btn-primary btn-lg smallmar">Learn More</button>
+            <button class="btn btn-primary btn-lg smallmar">Live Site</button>
+            <a href="https://github.com/adamb5441" target="_blank"><button class="btn btn-primary btn-lg smallmar">Repository</button></a>*@
+                                <p>Under Construction</p>
+                            </figcaption>
+                            <!-- /figcaption -->
+                        </figure>
+                        <!-- /figure -->
+                    </div>
+                    <!-- /grid-mask -->
+                    <br>
+                </div>
+                <!-- /col -->
+                <!-- PORTFOLIO IMAGE 5 -->
+                <div class="col-md-4">
+                    <div class="grid mask">
+                        <figure>
+                            <img class="img-responsive"  src="~/img/webapi.png" />
+                            <figcaption style="height: auto; display:flex; flex-direction: column; justify-content: center; align-items: center" ;>
+                                <h3>.NET api</h3>
+                                @*<button class="btn btn-primary btn-lg smallmar">Learn More</button>
+                <button class="btn btn-primary btn-lg smallmar">Live Site</button>
+            <a href="https://github.com/adamb5441" target="_blank"><button class="btn btn-primary btn-lg smallmar">Repository</button></a>*@
+                                <p>Under Construction</p>
+                            </figcaption>
+                            <!-- /figcaption -->
+                        </figure>
+                        <!-- /figure -->
+                    </div>
+                    <!-- /grid-mask -->
+                    <br>
+                </div>
+                <!-- /col -->
+                <!-- PORTFOLIO IMAGE 6 -->
+                <div class="col-md-4">
+                    <div class="grid mask">
+                        <figure>
+                            <img class="img-responsive"  src="~/img/iphone_apps.jpg" />
+                            <figcaption style="height: auto; display:flex; flex-direction: column; justify-content: center; align-items: center" ;>
+                                <h3>Xamarin Mobile App</h3>
+                                @*<button class="btn btn-primary btn-lg smallmar">Learn More</button>
+            <button class="btn btn-primary btn-lg smallmar">Live Site</button>
+            <a href="https://github.com/adamb5441" target="_blank"><button class="btn btn-primary btn-lg smallmar">Repository</button></a>*@
+                                <p>Under Construction</p>
+                            </figcaption>
+                            <!-- /figcaption -->
+                        </figure>
+                        <!-- /figure -->
+                    </div>
+                    <!-- /grid-mask -->
+                </div>
             </div>
             <!-- /row -->
         </div>
@@ -543,12 +800,12 @@
             </p>
             <div class="credits">
                 <!--
-                  You are NOT allowed to delete the credit link to TemplateMag with free version.
-                  You can delete the credit link only if you bought the pro version.
-                  Buy the pro version with working PHP/AJAX contact form: https://templatemag.com/freelance-bootstrap-template/
-                  Licensing information: https://templatemag.com/license/
-                -->
-                Created with Freelance template by <a href="https://templatemag.com/">TemplateMag</a>
+      You are NOT allowed to delete the credit link to TemplateMag with free version.
+      You can delete the credit link only if you bought the pro version.
+      Buy the pro version with working PHP/AJAX contact form: https://templatemag.com/freelance-bootstrap-template/
+      Licensing information: https://templatemag.com/license/
+    -->
+                Created with Freelance template by <a href="https://templatemag.com/">TemplateMag</a>.. Customized by Adam Brown
             </div>
         </div>
     </div>
