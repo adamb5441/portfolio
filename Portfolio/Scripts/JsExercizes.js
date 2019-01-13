@@ -175,7 +175,7 @@ $("#palondrome").click(() => {
 })
 $("#palIn").on("keypress", function (e) {
     console.log($(this).val())
-    if (e.which > 48 && e.which < 57 || e.which == 32) {
+    if (e.which >= 48 && e.which <= 57 || e.which == 32) {
         e.preventDefault()
     }
 
