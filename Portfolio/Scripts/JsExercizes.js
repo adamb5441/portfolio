@@ -7,7 +7,37 @@ $("#smplCode").hide();
 $("#factCode").hide();
 $("#fbCode").hide();
 $("#palCode").hide();
+$(".pageExit").click(() => {
+    $("#resultHead1").hide();
+    $("#resultHead2").hide();
+    $("#resultHead3").hide();
+    $("#resultHead4").hide();
+    $("#smplCode").hide();
+    $("#factCode").hide();
+    $("#fbCode").hide();
+    $("#palCode").hide();
+    $("#num1").val("");
+    $("#num2").val("");
+    $("#num3").val("");
+    $("#num4").val("");
+    $("#num5").val("");
 
+    $("#sum").text("")
+    $("#product").text("")
+    $("#average").text("")
+    $("#max").text("")
+    $("#min").text("")
+    $("#factIn").val("");
+
+    $("#factOut").text("")
+    $("#fizzIn").val("");
+    $("#buzzIn").val("");
+
+    $("#fbOut").text("")
+    $("#palIn").val("");
+
+    $("#palOut").text("")
+})
 $("#btnNumber").click(() => {
     var num1 = Number($("#num1").val());
     var num2 = Number($("#num2").val());
@@ -75,7 +105,6 @@ $("#factIn").on("keypress", function(e) {
 })
 $("#factorial").click(() => {
     var num = Number($("#factIn").val());
-    console.log(num)
     var total = 1
     if (num <1 || num > 170) {
         total = "invalid entry";
@@ -85,7 +114,6 @@ $("#factorial").click(() => {
             total *= i;
         }
     }
-    console.log(total)
     $("#factOut").text(total)
     $("#resultHead2").show();
 
@@ -161,10 +189,10 @@ $("#palondrome").click(() => {
     let str = $("#palIn").val()
     var arr = str.split('')
     var j = arr.length - 1
-    var check = true
+    var check = "The word is a palindrome."
     for (let i = 0; i != j && i< j; i++) {
         if (arr[i] != arr[j]) {
-            check = false
+            check = "The word is NOT a palindrome."
         }
         j--
         console.log("loop")
