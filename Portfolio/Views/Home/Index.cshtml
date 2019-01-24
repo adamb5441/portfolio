@@ -968,53 +968,6 @@
 
     <section id="contact" name="contact"></section>
 
-    @*//declares the modal
-    @model Portfolio.Models.EmailModel
-    //declare form
-    @using (Html.BeginForm())
-    {@Html.AntiForgeryToken()
-    <header style="background-color: black; display: block; height: 60px"></header>
-    <h4>Send me a message.</h4>
-    <hr />
-    @Html.ValidationSummary("", new { @class = "text-danger" })
-    <div class="form-group">
-        @Html.LabelFor(m => m.FromName, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.FromName, new { @class = "form-control" })
-            @Html.ValidationMessageFor(m => m.FromName)
-        </div>
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(m => m.FromEmail, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.FromEmail, new { @class = "form-control", placeholder = "example@email.com" })
-            @Html.ValidationMessageFor(m => m.FromEmail)
-        </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Body, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Body, new { @class = "form-control" })
-            @Html.ValidationMessageFor(m => m.Body)
-        </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Subject, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Subject, new { @class = "form-control" })
-            @Html.ValidationMessageFor(m => m.Subject)
-        </div>
-    </div>
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" class="btn btn-primary" value="Send" />
-        </div>
-    </div>
-}*@
-
-
-
     <div id="footerwrap">
                 <div class="container">
                     <div class="row text-center">
@@ -1031,78 +984,47 @@
                     <div class="col-lg-7">
                         <br>
                         @model Portfolio.Models.EmailModel
-                        //declare form
                         @using (Html.BeginForm())
-                        {@Html.AntiForgeryToken()
-                        <form class="contact-form php-mail-form" role="form" action="contactform/contactform.php" method="POST">
+                        {
+                        @Html.AntiForgeryToken()
+                        <form class="contact-form" role="form" method="POST">
                             @Html.ValidationSummary("", new { @class = "text-danger" })
                             <div class="form-group">
-                                @Html.LabelFor(m => m.FromName, new { @class = "col-md-2 control-label" })
-                                <div class="col-md-10">
-                                    @Html.TextBoxFor(m => m.FromName, new { @class = "form-control" })
+                                @Html.Label("Your Name", new { @class = "contactlabel" })
+                                <div>
+                                    @Html.TextBoxFor(m => m.FromName, new { @class = "form-control contactinput", placeholder = "John Doe" })
                                     @Html.ValidationMessageFor(m => m.FromName)
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                @Html.LabelFor(m => m.FromEmail, new { @class = "col-md-2 control-label" })
-                                <div class="col-md-10">
-                                    @Html.TextBoxFor(m => m.FromEmail, new { @class = "form-control", placeholder = "example@email.com" })
+                                @Html.Label("Your Email", new { @class = "contactlabel" })
+                                <div>
+                                    @Html.TextBoxFor(m => m.FromEmail, new { @class = "form-control contactinput", placeholder = "example@email.com" })
                                     @Html.ValidationMessageFor(m => m.FromEmail)
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="contact-name">Your Name</label>
-                                <div class="col-md-10">
-                                    @Html.TextBoxFor(m => m.Body, new { @class = "form-control" })
-                                    @Html.ValidationMessageFor(m => m.Body)
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                @Html.LabelFor(m => m.Subject, new { @class = "col-md-2 control-label" })
-                                <div class="col-md-10">
-                                    @Html.TextBoxFor(m => m.Subject, new { @class = "form-control" })
+                                @Html.Label("Subject", new { @class = "contactlabel" })
+                                <div>
+                                    @Html.TextBoxFor(m => m.Subject, new { @class = "form-control contactinput", placeholder = "Subject" })
                                     @Html.ValidationMessageFor(m => m.Subject)
                                 </div>
                             </div>
-                            @*<div class="form-group">
-                <label for="contact-name">Your Name</label>
-                <input type="name" name="name" class="form-control" id="contact-name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
-                <div class="validate"></div>
-            </div>
+                            <div class="form-group">
+                                @Html.Label("Your Message", new { @class = "contactlabel" })
+                                <div>
+                                    @Html.TextAreaFor(m => m.Body, new { @class = "form-control contactinput", rows = "5", placeholder = "Your Message" })
+                                    @Html.ValidationMessageFor(m => m.Body)
+                                </div>
+                            </div>
+                            <div class="contactvalidate"></div>
+                            <div class="contactloading"></div>
+                            <div class="contacterror-message"></div>
+                            <div class="contactsent-message">Your message has been sent. Thank you!</div>
 
-            <div class="form-group">
-                @Html.LabelFor(m => m.FromName, new { @class = "col-md-2 control-label" })
-                <div class="col-md-10">
-                    @Html.TextBoxFor(m => m.FromName, new { @class = "form-control" })
-                    @Html.ValidationMessageFor(m => m.FromName)
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label for="contact-email">Your Email</label>
-                <input type="email" name="email" class="form-control" id="contact-email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email">
-                <div class="validate"></div>
-            </div>
-
-            <div class="form-group">
-                <label for="contact-subject">Subject</label>
-                <input type="text" name="subject" class="form-control" id="contact-subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject">
-                <div class="validate"></div>
-            </div>
-
-            <div class="form-group">
-                <label for="contact-message">Your Message</label>
-                <textarea class="form-control" name="message" id="contact-message" placeholder="Your Message" rows="5" data-rule="required" data-msg="Please write something for us"></textarea>
-                <div class="validate"></div>
-            </div>*@
-
-                            <div class="loading"></div>
-                            <div class="error-message"></div>
-                            <div class="sent-message">Your message has been sent. Thank you!</div>
-
-                            <div class="form-send">
-                                <button type="submit" class="btn btn-large">Send Message</button>
+                            <div class="contactform-send contactsend">
+                                <button type="submit" class=" contactbutton btn btn-large">Send Message</button>
                             </div>
 
                         </form>

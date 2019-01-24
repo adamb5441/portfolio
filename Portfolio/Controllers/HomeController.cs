@@ -29,8 +29,8 @@ namespace Portfolio.Controllers
                 try
                 {
                     var body = "<p>EmailModel From: <bold>{0}</bold>({1})</p><p>Message: </p><p>{2}</p>";
-                    var from = "MyBlog<example@gmail.com>";
-                    model.Body = "This is a message from your blog site. The name and the conacting person is above." + model.Body;
+                    var from = "MyPortfolio<example@gmail.com>";
+                    model.Body =  model.Body;
                     var email = new MailMessage(from, ConfigurationManager.AppSettings["emailto"])
                     {
                         Subject = "Portfolio Contact Email",
