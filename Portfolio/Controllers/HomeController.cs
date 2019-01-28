@@ -39,7 +39,6 @@ namespace Portfolio.Controllers
                     };
                     var svc = new PersonalEmail();
                     await svc.SendAsync(email);
-                    return RedirectToAction("Index");
 
                 }
                 catch (Exception ex)

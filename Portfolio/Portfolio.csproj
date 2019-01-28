@@ -146,6 +146,9 @@
     <Content Include="Content\Site.css" />
     <Content Include="img\apple-touch-icon.png" />
     <Content Include="img\avatar.jpg" />
+    <Content Include="img\bloglog01.png" />
+    <Content Include="img\bloglogo02.png" />
+    <Content Include="img\bloglogo03.png" />
     <Content Include="img\blogs.jpg" />
     <Content Include="img\bugTracker.jpg" />
     <Content Include="img\digi01.png" />
@@ -162,6 +165,7 @@
     <Content Include="img\foliowrap.jpg" />
     <Content Include="img\header-bg.jpg" />
     <Content Include="img\hiking.jpg" />
+    <Content Include="img\himalaya-evening.jpg" />
     <Content Include="img\iphone_apps.jpg" />
     <Content Include="img\jquery.png" />
     <Content Include="img\letter-512.png" />
