@@ -151,6 +151,9 @@
     <Content Include="img\bloglogo03.png" />
     <Content Include="img\blogs.jpg" />
     <Content Include="img\bugTracker.jpg" />
+    <Content Include="img\Bugtracker\Screenshot_2019-02-12 BugTracker-1.png" />
+    <Content Include="img\Bugtracker\Screenshot_2019-02-12 BugTracker-2.png" />
+    <Content Include="img\Bugtracker\Screenshot_2019-02-12 BugTracker.png" />
     <Content Include="img\digi01.png" />
     <Content Include="img\digi02.png" />
     <Content Include="img\digi03.png" />
@@ -170,6 +173,7 @@
     <Content Include="img\jquery.png" />
     <Content Include="img\letter-512.png" />
     <Content Include="img\mint.jpg" />
+    <Content Include="img\mvc.net_-300x160.png" />
     <Content Include="img\node.png" />
     <Content Include="img\portfolio\folio01.jpg" />
     <Content Include="img\portfolio\folio02.jpg" />

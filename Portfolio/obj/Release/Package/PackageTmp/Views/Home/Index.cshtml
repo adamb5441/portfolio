@@ -9,9 +9,10 @@
     <meta charset="utf-8">
     <title>Adam Brown-Portfolio</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="" name="description">
-
+    @*<meta content="" name="keywords">
+    <meta content="" name="description">*@
+    <meta property='og:image' content="~/img/hiking.jpg" />
+    <meta property='og:description' content="Adam Brown portfolio site" />
     <!-- Favicons -->
     <link href="~/img/letter-512.png" rel="icon">
     <link href="~/img/apple-touch-icon.png" rel="apple-touch-icon">
@@ -69,7 +70,8 @@
     <div id="headerwrap">
         <div class="container">
             <div class="col-lg-8">
-                <h1> Adam the man the myth the legend.</h1>
+                <h1> Adam Brown </h1>
+                <h1>Full Stack Developer</h1>
             </div>
             <div class="col-lg-4">
             </div>
@@ -89,7 +91,7 @@
             <br>
             <h4>ABOUT ME<br />-</h4>
             <p>
-                I'm a Web Developer with an interest in hiking and martial arts. I'm always looking to learn how things work and why they are the way they are. Interested in a carrier in web development for its multifaceted and technical nature.
+                <b>I'm a Web Developer with an interest in hiking and martial arts. I'm always looking to learn how things work and why they are the way they are. I am interested in a career in web development for its multifaceted and technical nature.</b>
             </p>
         </div>
         <!-- /col-lg-6 -->
@@ -124,7 +126,7 @@
                 </div>
                 <!-- /col -->
                 <!-- MODAL SHOW THE PORTFOLIO IMAGE. In this demo, all links point to this modal. You should create
-                a modal for each of your projects. -->
+        a modal for each of your projects. -->
 
                 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-lg">
@@ -789,7 +791,7 @@
                             <figcaption style="height: auto; display:flex; flex-direction: column; justify-content: center; align-items: center" ;>
                                 <h3>Legend's Blog</h3>
                                 <button data-toggle="modal" href="#blogModal" class="btn btn-primary btn-lg smallmar">Learn More</button>
-                                <button href="https://thelegendsblog.azurewebsites.net/" class="btn btn-primary btn-lg smallmar">Live Site</button>
+                                <a href="https://thelegendsblog.azurewebsites.net/" target="_blank"><button class="btn btn-primary btn-lg smallmar">Live Site</button></a>
                                 <a href="https://github.com/adamb5441/mvcBlog" target="_blank"><button class="btn btn-primary btn-lg smallmar">Repository</button></a>
                             </figcaption>
                             <!-- /figcaption -->
@@ -869,10 +871,9 @@
                             <img class="img-responsive" src="~/img/bugTracker.jpg" />
                             <figcaption style="height: auto; display:flex; flex-direction: column; justify-content: center; align-items: center" ;>
                                 <h3>Bug-Tracker</h3>
-                                @*<button class="btn btn-primary btn-lg smallmar">Learn More</button>
-                        <button class="btn btn-primary btn-lg smallmar">Live Site</button>
-                        <a href="https://github.com/adamb5441" target="_blank"><button class="btn btn-primary btn-lg smallmar">Repository</button></a>*@
-                                <p>Under Construction</p>
+                                <button data-toggle="modal" href="#bugModal" class="btn btn-primary btn-lg smallmar">Learn More</button>
+                                <a href="https://thebugtracker.azurewebsites.net/" target="_blank"><button class="btn btn-primary btn-lg smallmar">Live Site</button></a>
+                                <a href="https://github.com/adamb5441/BugTracker" target="_blank"><button class="btn btn-primary btn-lg smallmar">Repository</button></a>
                             </figcaption>
                             <!-- /figcaption -->
                         </figure>
@@ -883,6 +884,68 @@
                 <!-- /col -->
                 <br>
             </div>
+
+            <div class="modal fade" id="bugModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title">The Keyboard Warrior</h4>
+                        </div>
+                        <div class="modal-body">
+
+                            <div id="bugCara" class="carousel slide" data-ride="carousel">
+                                <!-- Indicators -->
+                                <ol class="carousel-indicators">
+                                    <li data-target="#bugCara" data-slide-to="0" class="active"></li>
+                                    <li data-target="#bugCara" data-slide-to="1"></li>
+                                    <li data-target="#bugCara" data-slide-to="2"></li>
+                                </ol>
+
+                                <!-- Wrapper for slides -->
+                                <div class="carousel-inner">
+                                    <div class="item active">
+                                        <img src="~/img/Bugtracker/Screenshot_2019-02-12 BugTracker.png" />
+                                    </div>
+
+                                    <div class="item">
+                                        <img src="~/img/Bugtracker/Screenshot_2019-02-12 BugTracker-1.png" />
+                                    </div>
+
+                                    <div class="item">
+                                        <img src="~/img/Bugtracker/Screenshot_2019-02-12 BugTracker-2.png" />
+                                    </div>
+                                </div>
+
+                                <!-- Left and right controls -->
+                                <a class="left carousel-control" href="#bugCara" data-slide="prev">
+                                    <span class="glyphicon glyphicon-chevron-left"></span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="right carousel-control" href="#bugCara" data-slide="next">
+                                    <span class="glyphicon glyphicon-chevron-right"></span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            </div>
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        Th Bug Tracker is a error managment system made in mvc5. Consisting of Developer, Submitter, Project Manager and Admin roles. 
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                    <!-- /.modal-content -->
+                </div>
+                <!-- /.modal-dialog -->
+            </div>
+
             <div class="row">
                 <div class="col-md-4 ">
                     <div class="grid mask">
@@ -891,8 +954,8 @@
                             <figcaption style="height: auto; display:flex; flex-direction: column; justify-content: center; align-items: center" ;>
                                 <h3>MVC</h3>
                                 @*<button class="btn btn-primary btn-lg smallmar">Learn More</button>
-                                    <button class="btn btn-primary btn-lg smallmar">Live Site</button>
-                                    <a href="https://github.com/adamb5441" target="_blank"><button class="btn btn-primary btn-lg smallmar">Repository</button></a>*@
+                            <button class="btn btn-primary btn-lg smallmar">Live Site</button>
+                            <a href="https://github.com/adamb5441" target="_blank"><button class="btn btn-primary btn-lg smallmar">Repository</button></a>*@
                                 <p>Under Construction</p>
                             </figcaption>
                             <!-- /figcaption -->
@@ -911,8 +974,8 @@
                             <figcaption style="height: auto; display:flex; flex-direction: column; justify-content: center; align-items: center" ;>
                                 <h3>.NET api</h3>
                                 @*<button class="btn btn-primary btn-lg smallmar">Learn More</button>
-                                        <button class="btn btn-primary btn-lg smallmar">Live Site</button>
-                                    <a href="https://github.com/adamb5441" target="_blank"><button class="btn btn-primary btn-lg smallmar">Repository</button></a>*@
+                                <button class="btn btn-primary btn-lg smallmar">Live Site</button>
+                            <a href="https://github.com/adamb5441" target="_blank"><button class="btn btn-primary btn-lg smallmar">Repository</button></a>*@
                                 <p>Under Construction</p>
                             </figcaption>
                             <!-- /figcaption -->
@@ -931,8 +994,8 @@
                             <figcaption style="height: auto; display:flex; flex-direction: column; justify-content: center; align-items: center" ;>
                                 <h3>Xamarin Mobile App</h3>
                                 @*<button class="btn btn-primary btn-lg smallmar">Learn More</button>
-                                    <button class="btn btn-primary btn-lg smallmar">Live Site</button>
-                                    <a href="https://github.com/adamb5441" target="_blank"><button class="btn btn-primary btn-lg smallmar">Repository</button></a>*@
+                            <button class="btn btn-primary btn-lg smallmar">Live Site</button>
+                            <a href="https://github.com/adamb5441" target="_blank"><button class="btn btn-primary btn-lg smallmar">Repository</button></a>*@
                                 <p>Under Construction</p>
                             </figcaption>
                             <!-- /figcaption -->
@@ -951,8 +1014,8 @@
                             <figcaption style="height: auto; display:flex; flex-direction: column; justify-content: center; align-items: center" ;>
                                 <h3>Vue.net</h3>
                                 @*<button class="btn btn-primary btn-lg smallmar">Learn More</button>
-                                    <button class="btn btn-primary btn-lg smallmar">Live Site</button>
-                                    <a href="https://github.com/adamb5441" target="_blank"><button class="btn btn-primary btn-lg smallmar">Repository</button></a>*@
+                            <button class="btn btn-primary btn-lg smallmar">Live Site</button>
+                            <a href="https://github.com/adamb5441" target="_blank"><button class="btn btn-primary btn-lg smallmar">Repository</button></a>*@
                                 <p>Under Construction</p>
                             </figcaption>
                             <!-- /figcaption -->
@@ -1013,7 +1076,10 @@
                                         <img src="~/img/jquery.png" />
                                         <h2>JQuery</h2>
                                     </div>
-
+                                    <div class="col-md-4">
+                                        <img src="~/img/mvc.net_-300x160.png" />
+                                        <h2>MVC<span style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">5</span></h2>
+                                    </div>
                                 </div>
                             </div>
                         </div>
