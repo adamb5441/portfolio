@@ -820,7 +820,7 @@
                         <div class="modal-content">
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                <h4 class="modal-title">The Keyboard Warrior</h4>
+                                <h4 class="modal-title">Blog</h4>
                             </div>
                             <div class="modal-body">
 
@@ -903,7 +903,7 @@
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                            <h4 class="modal-title">The Keyboard Warrior</h4>
+                            <h4 class="modal-title">Bug Tracker</h4>
                         </div>
                         <div class="modal-body">
 
@@ -943,7 +943,7 @@
                             <div class="container-fluid">
                                 <div class="row">
                                     <div class="col-md-12">
-                                        Th Bug Tracker is a error managment system made in mvc5. Consisting of Developer, Submitter, Project Manager and Admin roles. 
+                                        The Bug Tracker is a error managment system made in mvc5. Consisting of Developer, Submitter, Project Manager and Admin roles. 
                                     </div>
                                 </div>
                             </div>
@@ -966,10 +966,9 @@
                             <img class="img-responsive" src="~/img/financial.jpg" />
                             <figcaption style="height: auto; display:flex; flex-direction: column; justify-content: center; align-items: center" ;>
                                 <h3>MVC</h3>
-                                @*<button class="btn btn-primary btn-lg smallmar">Learn More</button>
-                            <button class="btn btn-primary btn-lg smallmar">Live Site</button>
-                            <a href="https://github.com/adamb5441" target="_blank"><button class="btn btn-primary btn-lg smallmar">Repository</button></a>*@
-                                <p>Under Construction</p>
+                                <button data-toggle="modal" href="#mvcModal" class="btn btn-primary btn-lg smallmar">Learn More</button>
+                                <a href="https://finiteplanner.azurewebsites.net/" target="_blank" class="btn btn-primary btn-lg smallmar">Live Site</a>
+                                <a href="https://github.com/adamb5441/FinancialPlanner" target="_blank"><button class="btn btn-primary btn-lg smallmar">Repository</button></a>
                             </figcaption>
                             <!-- /figcaption -->
                         </figure>
@@ -978,6 +977,69 @@
                     <!-- /grid-mask -->
                     <br>
                 </div>
+
+                <div class="modal fade" id="mvcModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title">Finite Website</h4>
+                            </div>
+                            <div class="modal-body">
+
+                                <div id="mvcCara" class="carousel slide" data-ride="carousel">
+                                    <!-- Indicators -->
+                                    <ol class="carousel-indicators">
+                                        <li data-target="#mvcCara" data-slide-to="0" class="active"></li>
+                                        <li data-target="#mvcCara" data-slide-to="1"></li>
+                                        <li data-target="#mvcCara" data-slide-to="2"></li>
+                                    </ol>
+
+                                    <!-- Wrapper for slides -->
+                                    <div class="carousel-inner">
+                                        <div class="item active">
+                                            <img src="~/img/Screenshot_2019-03-18 Finite.png" />
+                                        </div>
+
+                                        <div class="item">
+                                            <img src="~/img/Screenshot_2019-03-18 Finite(1).png" />
+                                        </div>
+
+                                        <div class="item">
+                                            <img src="~/img/Screenshot_2019-03-18 https finiteplanner azurewebsites net.png" />
+                                        </div>
+                                    </div>
+
+                                    <!-- Left and right controls -->
+                                    <a class="left carousel-control" href="#mvcCara" data-slide="prev">
+                                        <span class="glyphicon glyphicon-chevron-left"></span>
+                                        <span class="sr-only">Previous</span>
+                                    </a>
+                                    <a class="right carousel-control" href="#mvcCara" data-slide="next">
+                                        <span class="glyphicon glyphicon-chevron-right"></span>
+                                        <span class="sr-only">Next</span>
+                                    </a>
+                                </div>
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            Finite is a three part application for finnancial planning. Using a budget tracker to separate by catagory and an account balance with over draft and custom alert.
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                        <!-- /.modal-content -->
+                    </div>
+                    <!-- /.modal-dialog -->
+                </div>
+
+
                 <!-- /col -->
                 <!-- PORTFOLIO IMAGE 5 -->
                 <div class="col-md-4">
@@ -986,10 +1048,9 @@
                             <img class="img-responsive" src="~/img/webapi.png" />
                             <figcaption style="height: auto; display:flex; flex-direction: column; justify-content: center; align-items: center" ;>
                                 <h3>.NET api</h3>
-                                @*<button class="btn btn-primary btn-lg smallmar">Learn More</button>
-                                <button class="btn btn-primary btn-lg smallmar">Live Site</button>
-                            <a href="https://github.com/adamb5441" target="_blank"><button class="btn btn-primary btn-lg smallmar">Repository</button></a>*@
-                                <p>Under Construction</p>
+                                <button data-toggle="modal" href="#apiModal" class="btn btn-primary btn-lg smallmar">Learn More</button>
+                                <a href="https://finiteapi.azurewebsites.net" target="_blank" class="btn btn-primary btn-lg smallmar">Live Site</a>
+                                <a href="https://github.com/adamb5441/WebAPI" target="_blank"><button class="btn btn-primary btn-lg smallmar">Repository</button></a>
                             </figcaption>
                             <!-- /figcaption -->
                         </figure>
@@ -998,6 +1059,40 @@
                     <!-- /grid-mask -->
                     <br>
                 </div>
+
+                <div class="modal fade" id="apiModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title">API</h4>
+                            </div>
+                            <div class="modal-body container-fluid">
+
+                                <div class="row">
+                                    <div class="col-md-12">
+                                    <img style="width: 100%" src="~/img/Screenshot_2019-03-18 Swagger UI.png" />
+                                    </div>
+                                </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            Finite is a three part application for finnancial planning. This Api will be be used by the xamarin mobile app.
+                                        </div>
+                                    </div>
+  
+
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                        <!-- /.modal-content -->
+                    </div>
+                    <!-- /.modal-dialog -->
+                </div>
+
+
                 <!-- /col -->
                 <!-- PORTFOLIO IMAGE 6 -->
                 <div class="col-md-4">
@@ -1007,8 +1102,8 @@
                             <figcaption style="height: auto; display:flex; flex-direction: column; justify-content: center; align-items: center" ;>
                                 <h3>Xamarin Mobile App</h3>
                                 @*<button class="btn btn-primary btn-lg smallmar">Learn More</button>
-                            <button class="btn btn-primary btn-lg smallmar">Live Site</button>
-                            <a href="https://github.com/adamb5441" target="_blank"><button class="btn btn-primary btn-lg smallmar">Repository</button></a>*@
+                        <button class="btn btn-primary btn-lg smallmar">Live Site</button>
+                        <a href="https://github.com/adamb5441" target="_blank"><button class="btn btn-primary btn-lg smallmar">Repository</button></a>*@
                                 <p>Under Construction</p>
                             </figcaption>
                             <!-- /figcaption -->
