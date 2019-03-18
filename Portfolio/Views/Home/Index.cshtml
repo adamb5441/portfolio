@@ -307,42 +307,54 @@
                                                 </div>
                                                 <div id="factCode" class="row">
                                                     <pre class="brush: js">
-                                                        $("#factIn").on("keypress", function(e) {
-                                                            if (e.which < 48 || e.which > 57) {
-                                                                e.preventDefault()
-                                                            }
-                                                            else if ($(this).val().length > 2) {
-                                                                e.preventDefault()
-                                                            }
-                                                        })
+
                                                         $("#factorial").click(() => {
                                                             var num = Number($("#factIn").val());
                                                             console.log(num)
                                                             var total = 1
-                                                            if (num <1 || num> 170) {
-                                                                total = "invalid entry";
+                                                            if (num <1 || num>
+                                                            170) {
+                                                            total = "invalid entry";
                                                             }
                                                             else {
-                                                                for (let i = 2; i <= num; i++) {
-                                                                    total *= i;
-                                                                }
+                                                            for (let i = 2; i <= num; i++) {
+                                                            total *= i;
+                                                            }
                                                             }
                                                             console.log(total)
                                                             $("#factOut").text(total)
                                                             $("#resultHead2").show();
 
-                                                        })
-                                                        $("#factClear").click(() => {
+                                                            })
+                                                            $("#factClear").click(() => {
                                                             $("#factIn").val("");
 
                                                             $("#factOut").text("")
                                                             $("#resultHead2").hide();
 
-                                                        })
-                                                        $("#showFact").click(() => {
+                                                            })
+                                                            $("#showFact").click(() => {
                                                             $("#factCode").toggle()
-                                                        })
-                                                    </pre>
+                                                            })
+                                                            $("#factIn").on("keypress", function(e) {
+                                                            if (e.which < 48 || e.which > 57) {
+                                                            e.preventDefault()
+                                                            }
+                                                            else if ($(this).val().length > 2) {
+                                                            e.preventDefault()
+                                                            }
+                                                            })
+
+                                                            $("#factIn").on("keypress", function(e) {
+                                                            if (e.which < 48 || e.which > 57) {
+                                                            e.preventDefault()
+                                                            }
+                                                            else if ($(this).val().length > 2) {
+                                                            e.preventDefault()
+                                                            }
+                                                            })
+
+                                                      </pre>
                                                 </div>
                                             </div>
                                         </div>
@@ -387,13 +399,7 @@
                                                 </div>
                                                 <div id="fbCode" class="row">
                                                     <pre class="brush: js">
-                                                        const checkFB = (val) => {
-                                                                if (val > 100 || val === 0) {
-                                                                    return true
-                                                                } else {
-                                                                    return false
-                                                                }
-                                                            }
+
                                                             $("#fizzBuzz").click(() => {
                                                                 var num1 = Number($("#fizzIn").val());
                                                                 var num2 = Number($("#buzzIn").val());
@@ -443,6 +449,13 @@
                                                                 $("#fbOut").text("")
                                                                 $("#resultHead3").hide();
                                                             })
+                                                            const checkFB = (val) => {
+                                                                if (val > 100 || val === 0) {
+                                                                    return true
+                                                                } else {
+                                                                    return false
+                                                                }
+                                                            }
                                                     </pre>
                                                 </div>
                                             </div>
