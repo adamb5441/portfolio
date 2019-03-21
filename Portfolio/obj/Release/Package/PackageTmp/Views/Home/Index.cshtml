@@ -321,7 +321,6 @@
                                                             total *= i;
                                                             }
                                                             }
-                                                            console.log(total)
                                                             $("#factOut").text(total)
                                                             $("#resultHead2").show();
 
@@ -429,7 +428,6 @@
 
                                                             })
                                                             $("#fizzIn,#buzzIn").on("keypress", function (e) {
-                                                                console.log($(this).val())
                                                                 if (e.which < 48 || e.which > 57) {
                                                                     e.preventDefault()
                                                                 }
@@ -477,8 +475,11 @@
                                                     <h2>Input</h2>
                                                 </div>
                                                 <div class="row">
-                                                    Enter a word(case sensitive):
+                                                    <b>
+                                                        Enter a word(case sensitive):
+                                                    </b>
                                                     <input id="palIn" />
+
                                                 </div>
                                                 <div class="row" style="padding-top: 10px">
                                                     <button id="palondrome" class="btn btn-small btn-success">run</button>
@@ -510,7 +511,6 @@
                                                                     check = false
                                                                 }
                                                                 j--
-                                                                console.log("loop")
                                                             }
                                                             $("#palOut").text(check.toString())
                                                             $("#resultHead4").show();
